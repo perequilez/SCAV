@@ -5,6 +5,12 @@
 
 Aquest repositori conté un script de Python amb els diferents exercicis de la primera pràctica. Els exercicis es descriuran a continuació, amb instruccions sobre com executar-los.
 
+Primer de tot però, definim el path de la nostra imatge:
+```python
+# Definim path de la imatge
+img = '/Users/perequilez/Desktop/image.jpg' # Exemple
+```
+
 ## Exercici 1 - Conversió RGB a YUV
 
 Aquest exercici implica la conversió de valors RGB a YUV utilitzant una matriu de conversió específica. La funció `rgb2yuv` realitza la conversió i la funció `yuv2rgb` fa la conversió inversa.
