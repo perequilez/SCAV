@@ -74,10 +74,7 @@ def resize_image(input_file, output_file, width, height):
         print(f"Error: {e}")
 ```
 #### Resultat exercici 2:
-```python
-RGB a YUV: (4.744, 1.6023, -1.5299800000000001)
-YUV a RGB: (3.0000828965999995, 4.999958693, 8.000049853)
-```
+![Imatge Original](output.jpg)
 ## Exercici 3 - Patró de Ziga-Zaga
 
 En aquest exercici, llegeixem els bytes d'un arxiu d'entrada i els organitzem en un patró de ziga-zaga.
@@ -126,6 +123,10 @@ def serpentine(file_path):
 
     return zigzag_bytes
 ```
+#### Resultat exercici 3:
+```python
+[b'\xff', b'\xd8', b'\xff', b'\xe1', b'0', b'\x02', b'E', b'x', b'i', b'f']
+```
 ## Exercici 4 - Conversió a B/N i Compressió
 
 En aquest exercici, es converteix una imatge a blanc i negre i es pot especificar el nivell de compressió utilitzant ffmpeg.
@@ -143,6 +144,9 @@ def convert_to_bw_and_compress(input_image, output_image, compression_quality=0)
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
 ```
+#### Resultat exercici 4:
+![Imatge Original](output_bw.jpg)
+## Exercici 3 - Patró de Ziga-Zaga
 ## Exercici 5 - Codificació d'Execució de Longitud
 
 En aquest exercici, es realitza la codificació de longitud d'execució d'una llista de dades.
@@ -182,6 +186,10 @@ def run_length_encode(data):
     return encoded_data
 
 ```
+#### Resultat exercici 5:
+```python
+[1, 3, 2, 3, 3, 2, 4, 2]
+```
 ## Exercici 6 - Transformada de Cosenides Discretes (DCT)
 
 Aquest exercici implica l'ús de la Transformada de Cosenides Discretes (DCT) per a processar imatges. Es mostra com aplicar les funcions DCT i IDCT a una imatge.
@@ -202,6 +210,8 @@ class DCTProcessor:
         return idct(idct(a.T, norm='ortho').T, norm='ortho')
 
 ```
+#### Resultat exercici 4:
+![Imatge Original](figure_ex6.jpg)
 ## Com executar l'script
 
 Per a executar l'script i provar els diversos exercicis, pots utilitzem la funció main() a través de la terminal i especificant el número d'exercici com a argument.
