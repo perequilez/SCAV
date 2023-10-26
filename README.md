@@ -1,110 +1,261 @@
-# SCAV
+# PRÀCTICA 1: SCAV
 
-Descripció curta o resum del teu projecte.
 
 ## Descripció
 
-Aquest repositori conté un script de Python amb diversos exercicis per a processament d'imatges i altres operacions. Els exercicis es descriuran a continuació, juntament amb instruccions sobre com executar-los.
+Aquest repositori conté un script de Python amb els diferents exercicis de la primera pràctica. Els exercicis es descriuran a continuació, amb instruccions sobre com executar-los.
 
 ## Exercici 1 - Conversió RGB a YUV
 
 Aquest exercici implica la conversió de valors RGB a YUV utilitzant una matriu de conversió específica. La funció `rgb2yuv` realitza la conversió i la funció `yuv2rgb` fa la conversió inversa.
 
-**Captura de Pantalla (opcional):**
-
-![Exercici 1](imatge_exercici1.png)
-
-**Instruccions per a l'Usuari:**
-
-Per a executar aquest exercici, pots cridar les funcions `rgb2yuv` i `yuv2rgb` amb els valors RGB o YUV desitjats.
-
 ```python
-rgb = (3, 5, 8)
-yuv = rgb2yuv(rgb)
-print(f"RGB a YUV: {yuv}")
+def rgb2yuv(rgb):
+    # Convertim els valors RGB a YUV aplicant els valors de la matriu de conversió a cada element corresponent
 
-rgb_result = yuv2rgb(yuv)
-print(f"YUV a RGB: {rgb_result}")
+    # Calculem el valor Y (Lluminància)
+    y = 0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]
+
+    # Calculem el valor U (Crominància U)
+    u = -0.14713 * rgb[0] - 0.288862 * rgb[1] + 0.436 * rgb[2]
+
+    # Calculem el valor V (Crominància V)
+    v = 0.615 * rgb[0] - 0.51498 * rgb[1] - 0.10001 * rgb[2]
+
+    # Retornem els valors YUV com una tupla
+    return y, u, v
+
+
+def yuv2rgb(yuv):
+    # Convertim els valors YUV a RGB aplicant els valors de la matriu de conversió a cada element corresponent
+
+    # Calculem el valor de R (Vermell)
+    r = yuv[0] + 1.13983 * yuv[2]
+
+    # Calculem el valor de G (Verd)
+    g = yuv[0] - 0.39465 * yuv[1] - 0.58060 * yuv[2]
+
+    # Calculem el valor de B (Blau)
+    b = yuv[0] + 2.03211 * yuv[1]
+
+    # Retornem els valors RGB com una tupla
+    return r, g, b
 ```
 ## Exercici 2 - Redimensionar i Comprimir una Imatge
 
 En aquest exercici, redimensionem una imatge utilitzant la comanda `ffmpeg` per especificar l'amplada i l'altura desitjades. També es pot ajustar la qualitat de la imatge.
 
-![Captura de Pantalla de l'Exercici 2](imatge_exercici2.png)  <!-- Afegir la vostra captura de pantalla aquí si és necessari -->
-
-**Instruccions per a l'Usuari:**
-
-Per a executar aquest exercici, crida la funció `resize_image` amb l'arxiu d'entrada, l'arxiu de sortida, l'amplada i l'altura desitjades.
-
 ```python
-input_image = 'imatge.jpg'
-output_image = 'imatge_redimensionada.jpg'
-width = 640
-height = 480
-resize_image(input_image, output_image, width, height)
+def resize_image(input_file, output_file, width, height):
+    try:
+        # Construïm la comanda ffmpeg per redimensionar i reduir la qualitat de la imatge
+        ffmpeg_command = f'ffmpeg -i {input_file} -vf "scale={width}:{height}" -q:v 2 {output_file}'
+
+        # Executem la comanda ffmpeg
+        subprocess.run(ffmpeg_command, shell=True, check=True)
+        
+        # Imprimim un missatge d'èxit
+        print(f"Imatge redimensionada i qualitat reduïda. Sortida guardada com a {output_file}")
+    
+    except subprocess.CalledProcessError as e:
+        # En cas d'error, imprimim un missatge d'error amb detalls
+        print(f"Error: {e}")
 ```
 ## Exercici 3 - Patró de Ziga-Zaga
 
 En aquest exercici, llegeixem els bytes d'un arxiu d'entrada i els organitzem en un patró de ziga-zaga.
 
-**Instruccions per a l'Usuari:**
-
-Per a executar aquest exercici, crida la funció `serpentine` amb la ruta de l'arxiu d'entrada. Després, pots processar el resultat com ho desitgis.
-
 ```python
-file_path = 'arxiu.bin'
-zigzag_bytes = serpentine(file_path)
+def serpentine(file_path):
+    # Creem una llista per emmagatzemar els bytes llegits en patró de ziga-zaga
+    zigzag_bytes = []
+
+    with open(file_path, 'rb') as file:
+        byte = file.read(1)
+        count = 0
+        row, col = 0, 0
+        reverse = False
+
+        while byte:
+            # Afegim el byte al patró de ziga-zaga
+            zigzag_bytes.append(byte)
+
+            # Determinem la següent posició en el patró de ziga-zaga
+            if not reverse:
+                if col == 0:
+                    reverse = True
+                    row += 1
+                elif row == 0:
+                    reverse = True
+                    col += 1
+                else:
+                    row -= 1
+                    col += 1
+            else:
+                if row == 0:
+                    reverse = False
+                    col += 1
+                elif col == 0:
+                    reverse = False
+                    row += 1
+                else:
+                    row += 1
+                    col -= 1
+
+            # Llegim el següent byte
+            byte = file.read(1)
+
+            count += 1
+
+    return zigzag_bytes
 ```
 ## Exercici 4 - Conversió a B/N i Compressió
 
 En aquest exercici, es converteix una imatge a blanc i negre i es pot especificar el nivell de compressió utilitzant ffmpeg.
 
-**Instruccions per a l'Usuari:**
-
-Per a executar aquest exercici, crida la funció `convert_to_bw_and_compress` amb l'arxiu d'entrada, l'arxiu de sortida i el nivell de compressió desitjat.
-
 ```python
-input_image = 'imatge.jpg'
-output_image = 'imatge_bn.jpg'
-compression_quality = 0  # Ajusta el nivell de compressió
-convert_to_bw_and_compress(input_image, output_image, compression_quality)
+def convert_to_bw_and_compress(input_image, output_image, compression_quality=0):
+    try:
+        # Construïm la comanda ffmpeg amb els paràmetres
+        ffmpeg_command = f'ffmpeg -i {input_image} -vf format=gray -q:v {compression_quality} {output_image}'
+
+        # Executem la comanda ffmpeg
+        subprocess.run(ffmpeg_command, shell=True, check=True)
+        print(
+            f"Imatge convertida a B/N i comprimida amb qualitat {compression_quality}. Sortida guardada com a {output_image}")
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e}")
 ```
 ## Exercici 5 - Codificació d'Execució de Longitud
 
 En aquest exercici, es realitza la codificació de longitud d'execució d'una llista de dades.
 
-**Instruccions per a l'Usuari:**
-
-Per a executar aquest exercici, proporciona una llista de dades i crida la funció `run_length_encode` per a codificar-les.
-
 ```python
-data = [1, 2, 2, 3, 4, 1, 1, 4, 3, 2]
-encoded_data = run_length_encode(data)
+def run_length_encode(data):
+    # Comprovem si la llista d'entrada està buida. Si ho és, retornem una llista buida.
+    if not data:
+        return []
+
+    # Ordenem la llista d'entrada per assegurar que els elements repetits estiguin adjacents.
+    data.sort()
+
+    # Creem una llista buida per emmagatzemar la seqüència codificada.
+    encoded_data = []
+
+    # Inicialitzem les variables per fer seguiment de l'element actual i el seu comptador.
+    current_value = data[0]
+    count = 1
+
+    # Recorrem la llista d'entrada des del segon element fins a l'últim.
+    for value in data[1:]:
+        # Comparem l'element actual amb l'anterior. Si són iguals, incrementem el comptador.
+        if value == current_value:
+            count += 1
+        else:
+            # Si trobem un element diferent, afegim l'element actual i el seu comptador a la seqüència codificada.
+            encoded_data.extend([current_value, count])
+            # Actualitzem l'element actual i reiniciem el comptador a 1.
+            current_value = value
+            count = 1
+
+    # Afegim l'últim element i el seu comptador a la seqüència codificada.
+    encoded_data.extend([current_value, count])
+
+    # Retornem la seqüència codificada.
+    return encoded_data
+
 ```
 ## Exercici 6 - Transformada de Cosenides Discretes (DCT)
 
 Aquest exercici implica l'ús de la Transformada de Cosenides Discretes (DCT) per a processar imatges. Es mostra com aplicar les funcions DCT i IDCT a una imatge.
 
-**Instruccions per a l'Usuari:**
-
-Per a executar aquest exercici, crea una instància de la classe `DCTProcessor` i utilitza les funcions `dct2` i `idct2` per a processar imatges.
-
 ```python
-dct_processor = DCTProcessor()
-im = rgb2gray(imread('imatge.jpg'))
-imf = dct_processor.dct2(im)
-im1 = dct_processor.idct2(imf)
+
+# Creem la classe per processar imatges mitjançant la Transformada de Cosenides Discretes (DCT)
+class DCTProcessor:
+    def __init__(self):
+        pass
+
+    # Definim la funció que aplica la DCT a la matriu d'entrada
+    def dct2(self, a):
+        return dct(dct(a.T, norm='ortho').T, norm='ortho')
+
+    # Definim la funció que aplica la IDCT a la matriu d'entrada
+    def idct2(self, a):
+        return idct(idct(a.T, norm='ortho').T, norm='ortho')
+
 ```
 ## Com executar l'script
 
-Per a executar l'script i provar els diversos exercicis, pots utilitzar la funció `main`. Executa l'script mitjançant la línia de comandes i especifica el número d'exercici com a argument.
+Per a executar l'script i provar els diversos exercicis, pots utilitzem la funció main() a través de la terminal i especificant el número d'exercici com a argument.
 
-Exemple: `python script.py 1`
+```python
+def main():
+    # Creem un analitzador d'arguments de línia de comandes
+    parser = argparse.ArgumentParser(description='Executa un exercici específic')
+    parser.add_argument('exercici', type=int, help='Número de l\'exercici (1-6)')
+    args = parser.parse_args()
 
-Això executarà l'exercici 1 amb les instruccions i proporcionarà els resultats.
+    # Exemple EX_1
+    if args.exercici == 1:
+        rgb = (3, 5, 8)
+        yuv = rgb2yuv(rgb)
+        print(f"RGB a YUV: {yuv}")
 
-Ara tens tota la informació necessària per a compartir el teu script i els exercicis associats en un repositori de GitHub. Afegeix les captures de pantalla i ajusta les instruccions segons les necessitats del teu projecte.
+        rgb_result = yuv2rgb(yuv)
+        print(f"YUV a RGB: {rgb_result}")
 
-```vbnet
-Recorda substituir els noms d'arxius i les descripcions dels exercicis amb la informació real del teu projecte. També pots afegir enllaços a altres recursos o documentació relacionada amb el teu projecte si és necessari.
+    # Exemple EX_2
+    elif args.exercici == 2:
+        input_image = img
+        output_image = "output.jpg"
+        width = 640
+        height = 480
+        resize_image(input_image, output_image, width, height)
+
+    # Exemple EX_3
+    elif args.exercici == 3:
+        file_path = img  
+        zigzag_bytes = serpentine(file_path)
+        print(zigzag_bytes[:10])  # Imprimim els primers 10 bytes llegits en un patró de ziga-zaga com a exemple
+
+    # Exemple EX_4
+    elif args.exercici == 4:
+        input_image = img  
+        output_image = 'output_bw.jpg'  # Definim el nom del fitxer de sortida
+        compression_quality = 0  # Nivell de compressió (0 és el més alt)
+        convert_to_bw_and_compress(input_image, output_image, compression_quality)
+
+    # Exemple EX_5
+    elif args.exercici == 5:
+        data = [1, 2, 2, 3, 4, 1, 1, 4, 3, 2]
+        encoded_data = run_length_encode(data)
+        print(encoded_data)
+
+    # Exemple EX_6
+    elif args.exercici == 6:
+
+        dct_processor = DCTProcessor()  # Creem una instància de la classe 'DCTProcessor'
+        im = rgb2gray(imread(img))  # llegim una imatge RGB i la convertim a escala de grisos
+        imf = dct_processor.dct2(im)
+        im1 = dct_processor.idct2(imf)
+        np.allclose(im, im1)  # comprovem si la imatge reconstruïda és gairebé igual a la imatge original
+        plt.gray()  # mostrem les imatges original i reconstruïda amb matplotlib.pylab
+        plt.subplot(121), plt.imshow(im), plt.axis('off'), plt.title('Imatge Original', size=10)
+        plt.subplot(122), plt.imshow(im1), plt.axis('off'), plt.title('Imatge Reconstruïda (DCT+IDCT)', size=10)
+        plt.show()
+    else:
+        print("Número d'exercici no vàlid. Si us plau, introduïu un número d'exercici entre 1 i 6.")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Per tal d'executar un exercici:
+Exemple: `python3 rgb_yuv.py 1`
+Això executarà l'exercici 1 amb els valors indicats en el main i proporcionarà els resultats. 
+
+Canviant el número "1" de la comanda podràs executar els diferents exercicis, introduïnt un número de (1-6).
+
 
