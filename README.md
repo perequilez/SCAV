@@ -10,7 +10,7 @@ Primer de tot però, definim el path de la nostra imatge:
 # Definim path de la imatge
 img = '/Users/perequilez/Desktop/image.jpg' # Exemple
 ```
-![Imatge Original](imatge.png)
+![Imatge Original](image.jpg)
 
 ## Exercici 1 - Conversió RGB a YUV
 
