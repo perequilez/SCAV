@@ -211,7 +211,7 @@ class DCTProcessor:
 
 ```
 #### Resultat exercici 4:
-![Imatge Original](figure_ex6.jpg)
+![Imatge Original](figure_ex6.png)
 ## Com executar l'script
 
 Per a executar l'script i provar els diversos exercicis, pots utilitzem la funció main() a través de la terminal i especificant el número d'exercici com a argument.
