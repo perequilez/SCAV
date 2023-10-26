@@ -10,6 +10,7 @@ Primer de tot però, definim el path de la nostra imatge:
 # Definim path de la imatge
 img = '/Users/perequilez/Desktop/image.jpg' # Exemple
 ```
+![Imatge Original](imatge.png)
 
 ## Exercici 1 - Conversió RGB a YUV
 
@@ -47,6 +48,11 @@ def yuv2rgb(yuv):
     # Retornem els valors RGB com una tupla
     return r, g, b
 ```
+#### Resultat exercici 1:
+```python
+RGB a YUV: (4.744, 1.6023, -1.5299800000000001)
+YUV a RGB: (3.0000828965999995, 4.999958693, 8.000049853)
+```
 ## Exercici 2 - Redimensionar i Comprimir una Imatge
 
 En aquest exercici, redimensionem una imatge utilitzant la comanda `ffmpeg` per especificar l'amplada i l'altura desitjades. També es pot ajustar la qualitat de la imatge.
@@ -66,6 +72,11 @@ def resize_image(input_file, output_file, width, height):
     except subprocess.CalledProcessError as e:
         # En cas d'error, imprimim un missatge d'error amb detalls
         print(f"Error: {e}")
+```
+#### Resultat exercici 2:
+```python
+RGB a YUV: (4.744, 1.6023, -1.5299800000000001)
+YUV a RGB: (3.0000828965999995, 4.999958693, 8.000049853)
 ```
 ## Exercici 3 - Patró de Ziga-Zaga
 
