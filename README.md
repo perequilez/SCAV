@@ -263,11 +263,11 @@ def main():
     elif args.exercici == 6:
 
         dct_processor = DCTProcessor()  # Creem una instància de la classe 'DCTProcessor'
-        im = rgb2gray(imread(img))  # llegim una imatge RGB i la convertim a escala de grisos
+        im = rgb2gray(imread(img))  # Llegim una imatge RGB i la convertim a escala de grisos
         imf = dct_processor.dct2(im)
         im1 = dct_processor.idct2(imf)
-        np.allclose(im, im1)  # comprovem si la imatge reconstruïda és gairebé igual a la imatge original
-        plt.gray()  # mostrem les imatges original i reconstruïda amb matplotlib.pylab
+        np.allclose(im, im1)  # Comprovem si la imatge reconstruïda és gairebé igual a la imatge original
+        plt.gray()  # Mostrem les imatges original i reconstruïda amb matplotlib.pylab
         plt.subplot(121), plt.imshow(im), plt.axis('off'), plt.title('Imatge Original', size=10)
         plt.subplot(122), plt.imshow(im1), plt.axis('off'), plt.title('Imatge Reconstruïda (DCT+IDCT)', size=10)
         plt.show()
