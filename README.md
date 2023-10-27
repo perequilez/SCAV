@@ -190,13 +190,13 @@ def run_length_encode(data):
 ```python
 [1, 3, 2, 3, 3, 2, 4, 2]
 ```
-## Exercici 6 - Transformada de Cosenides Discretes (DCT)
+## Exercici 6 - Transformada de Cosinus Discretes (DCT)
 
-Aquest exercici implica l'ús de la Transformada de Cosenides Discretes (DCT) per a processar imatges. Es mostra com aplicar les funcions DCT i IDCT a una imatge.
+Aquest exercici implica l'ús de la Transformada de Cosinus Discretes (DCT) per a processar imatges. Es mostra com aplicar les funcions DCT i IDCT a una imatge.
 
 ```python
 
-# Creem la classe per processar imatges mitjançant la Transformada de Cosenides Discretes (DCT)
+# Creem la classe per processar imatges mitjançant la Transformada de Cosinus Discretes (DCT)
 class DCTProcessor:
     def __init__(self):
         pass
