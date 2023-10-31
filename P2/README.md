@@ -154,3 +154,46 @@ def extract_random_frame_and_convert_to_bw(video_path, output_image_path, qualit
 #### Resultat exercici 5:
 Un exemple de resultat sería:
 ![Resultat_EX5](Output_EX5.jpeg)
+
+## Com executar l'script
+
+Per a executar l'script i provar els diversos exercicis, pots utilitzem la funció main() a través de la terminal i especificant el número d'exercici com a argument.
+
+```python
+def main():
+    # Creem un analitzador d'arguments de línia de comandes
+    parser = argparse.ArgumentParser(description='Executa un exercici específic')  # Creem un objecte d'analitzador d'arguments amb una descripció
+    parser.add_argument('exercici', type=int, help='Número de l\'exercici (1-4)')  # Afegim un argument que espera un número d'exercici
+    args = parser.parse_args()  # Analitzem els arguments de la línia de comandes
+
+    # Cridem als exercicis basats en l'argument 'exercici'
+    if args.exercici == 1:  # Si l'argument 'exercici' és igual a 1
+        success, message = convert_video_to_mpeg(bunny, 'Output_EX1.mpeg', "video_info.txt")  # Executem la funció 'convert_video_to_mpeg' amb els arguments especificats
+        print("EXERCICI 1:", message)
+    elif args.exercici == 2:  # Si l'argument 'exercici' és igual a 2
+        success, message = modify_resolution(bunny, "output_new_resolution_EX2.mp4", 640, 480)  # Executem la funció 'modify_resolution' amb els arguments especificats
+        print("EXERCICI 2:", message)  # Mostrem un missatge amb el resultat de l'exercici 2
+    elif args.exercici == 3:  # Si l'argument 'exercici' és igual a 3
+        success, message = change_chroma_subsampling(bunny, "output_subsampling_EX3.mp4", "yuv420p")  # Executem la funció 'change_chroma_subsampling' amb els arguments especificats
+        print("EXERCICI 3:", message)  # Mostrem un missatge amb el resultat de l'exercici 3
+    elif args.exercici == 4:  # Si l'argument 'exercici' és igual a 4
+        success, message = read_video_info(bunny)  # Executem la funció 'read_video_info' amb l'arxiu de vídeo especificat
+        print("EXERCICI 4:", message)
+    elif args.exercici == 5:  # Si l'argument 'exercici' és igual a 5
+        success, message =extract_random_frame_and_convert_to_bw(bunny, 'random_frame_bw.jpeg', quality=2)  # Executem la funció 'extract_random_frame_and_convert_to_bw' amb els arguments especificats
+        print("EXERCICI 5:", message)
+    else:  # Si l'argument 'exercici' no coincideix amb cap dels valors anteriors
+        print("Número d'exercici no vàlid. Si us plau, introduïu un número d'exercici entre 1 i 4.")  # Mostrem un missatge d'error
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Per tal d'executar un exercici:
+Exemple: `python3 python_&_video.py 1`
+Això executarà l'exercici 1 amb els valors indicats en el main i proporcionarà els resultats. 
+
+Canviant el número "1" de la comanda podràs executar els diferents exercicis, introduïnt un número de (1-5).
+
+
