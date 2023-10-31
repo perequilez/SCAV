@@ -146,7 +146,7 @@ def convert_to_bw_and_compress(input_image, output_image, compression_quality=0)
 ```
 #### Resultat exercici 4:
 ![Imatge Original](output_bw.jpg)
-## Exercici 3 - Patró de Ziga-Zaga
+
 ## Exercici 5 - Codificació d'Execució de Longitud
 
 En aquest exercici, es realitza la codificació de longitud d'execució d'una llista de dades.
@@ -210,7 +210,7 @@ class DCTProcessor:
         return idct(idct(a.T, norm='ortho').T, norm='ortho')
 
 ```
-#### Resultat exercici 4:
+#### Resultat exercici 6:
 ![Imatge Original](figure_ex6.png)
 ## Com executar l'script
 
