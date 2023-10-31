@@ -157,7 +157,7 @@ Un exemple de resultat sería:
 
 ## Com executar l'script
 
-Per a executar l'script i provar els diversos exercicis, pots utilitzem la funció main() a través de la terminal i especificant el número d'exercici com a argument.
+Per a executar l'script i provar els diversos exercicis, pots utilitzem la funció main() a través de la terminal i especificant el número d'exercici com a argument. Ho podem veure a la funció principal, main():
 
 ```python
 def main():
@@ -191,7 +191,7 @@ if __name__ == "__main__":
 ```
 
 Per tal d'executar un exercici:
-Exemple: `python3 python_&_video.py 1`
+Exemple: `python3 python_video.py 1`
 Això executarà l'exercici 1 amb els valors indicats en el main i proporcionarà els resultats. 
 
 Canviant el número "1" de la comanda podràs executar els diferents exercicis, introduïnt un número de (1-5).
