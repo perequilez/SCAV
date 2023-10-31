@@ -94,20 +94,63 @@ En el cas del video haureu d'executar el codi per veure el resultat:
 Aquest exercici implica la lectura i impressió de la informació d'un vídeo en format JSON utilitzant ffprobe. La funció read_video_info realitza aquesta operació.
 
 ```python
+def read_video_info(video_path):
+    try:
+        # Executem ffprobe per obtenir la informació del vídeo en format JSON
+        info_command = f'ffprobe -v error -select_streams v:0 -show_entries stream=codec_type,width,height,r_frame_rate,duration,bit_rate -of json "{video_path}"'
+        info_output = subprocess.check_output(info_command, shell=True).decode('utf-8')
 
+        # Analitzem la sortida JSON
+        video_info = json.loads(info_output)
+        # Guardem les dades rellevants
+        stream_info = video_info['streams'][0]
+
+        # Imprimim les dades rellevants
+        print("Exercici 4: Informació del vídeo:")
+        print(f"Tipus de codec: {stream_info['codec_type']}")
+        print(f"Resolució: {stream_info['width']}x{stream_info['height']}")
+        print(f"Taxa de quadres: {stream_info['r_frame_rate']}")
+        print(f"Durada: {stream_info['duration']} segons")
+        print(f"Taxa de bits: {stream_info['bit_rate']} bps")
+        return True, f"Dades obtingudes correctament"
+    except subprocess.CalledProcessError as e:
+        # Si hi ha un error en l'execució de la comanda 'ffmpeg', capturem l'excepció i la retornem
+        return False, str(e)
 ```
 #### Resultat exercici 4:
-En el cas del video haureu d'executar el codi per veure el resultat:
-![Resultat_EX2](Output_EX4.png)
-
+```python
+Exercici 4: Informació del vídeo:
+Tipus de codec: video
+Resolució: 1920x1080
+Taxa de quadres: 60/1
+Durada: 634.566667 segons
+Taxa de bits: 3813575 bps
+```
 ## Exercici 5 - Extracció d'un Marc Aleatori i Conversió a Blanc i Negre
 
 Aquest exercici implica l'extracció d'un marc aleatori d'un vídeo, que posteriorment es converteix a blanc i negre. Aquest exercici fa servir la funció extract_random_frame_and_convert_to_bw i inclou una crida a una funció addicional.
 
 ```python
+def extract_random_frame_and_convert_to_bw(video_path, output_image_path, quality=2):
+    try:
+        # Obtenim la durada del vídeo
+        info_command = f'ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "{video_path}"'
+        duration = float(subprocess.check_output(info_command, shell=True))
 
+        # Escollim un instant aleatori dins de la durada del vídeo
+        random_time = random.uniform(0, duration)
+
+        # Extraiem el frame aleatori i el desem com a imatge
+        extract_command = f'ffmpeg -ss {random_time} -i "{video_path}" -vframes 1 "{"random_frame.jpeg"}"'
+        subprocess.run(extract_command, shell=True)
+
+        # Apliquem la funció convert_to_bw_and_compress al frame random i el guardem
+        convert_to_bw_and_compress("random_frame.jpeg", output_image_path, quality)
+        return True, f"Conversió a bw del frame aleatori feta i desat com a {output_image_path}"
+    except subprocess.CalledProcessError as e:
+        # Si hi ha un error en l'execució de la comanda 'ffmpeg', capturem l'excepció i la retornem
+        return False, str(e)
 ```
 #### Resultat exercici 5:
-```python
-
-```
+Un exemple de resultat sería:
+![Resultat_EX2](Output_EX5.png)
