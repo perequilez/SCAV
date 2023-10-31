@@ -15,7 +15,7 @@ I definim el path del video "Big Buck Bunny":
 #  Definim el path del video "Big Buck Bunny"
 bunny = '/Users/perequilez/Desktop/BigBuckBunny.mp4'
 ```
-Tenint en compte la sea informació la qual es veurà modificada com veurem, en els següents exercicis:
+Tenint en compte la seva informació, la qual es veurà modificada com veurem, en els següents exercicis:
 
 ![Vídeo Original](Informació_vídeo_original.png)
 
@@ -44,7 +44,7 @@ def convert_video_to_mpeg(input_video, output_mp2_file, info_file='video_info.tx
 #### Resultat exercici 1:
 Podeu trobar el resultat de l'exercici en el mateix repositori P2/video_info.txt.
 
-En el cas del video haureu d'executar el codi per veure el resultat:
+En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
 ![Resultat EX1](Output_EX1.png)
 
@@ -65,7 +65,7 @@ def modify_resolution(input_video, output_video, width, height):
         return False, str(e)
 ```
 #### Resultat exercici 2:
-En el cas del video haureu d'executar el codi per veure el resultat:
+En el cas del vídeo haureu d'executar el codi per veure el resultat:
 ![Resultat_EX2](Output_EX2.png)
 
 ## Exercici 3 - Canvi de Submostreig de Cromàtica
@@ -86,7 +86,7 @@ def change_chroma_subsampling(input_video, output_video, subsampling):
         return False, str(e)
 ```
 #### Resultat exercici 3:
-En el cas del video haureu d'executar el codi per veure el resultat:
+En el cas del vídeo haureu d'executar el codi per veure el resultat:
 ![Resultat_EX2](Output_EX3.png)
 
 ## Exercici 4 - Lectura de la Informació del Vídeo
