@@ -153,4 +153,4 @@ def extract_random_frame_and_convert_to_bw(video_path, output_image_path, qualit
 ```
 #### Resultat exercici 5:
 Un exemple de resultat sería:
-![Resultat_EX2](Output_EX5.png)
+![Resultat_EX5](Output_EX5.jpeg)
