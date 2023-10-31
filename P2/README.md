@@ -5,26 +5,40 @@
 
 Aquest repositori conté un script de Python que utilitza la utilitat ffmpeg per a realitzar diverses operacions en vídeos. Cada exercici es descriu a continuació juntament amb una captura de la solució i instruccions sobre com exacutar-los.
 
-Primer de tot però, definim el path del video "Big Buck Bunny":
+Primer de tot però, importem la funció "convert_to_bw_and_compress" de la pràctica anterior la qual utilitzarem en l'exercici 5:
+```python
+# Importem la funció per l'exercici 5
+from rgb_yuv import convert_to_bw_and_compress
+```
+I definim el path del video "Big Buck Bunny":
 ```python
 #  Definim el path del video "Big Buck Bunny"
 bunny = '/Users/perequilez/Desktop/BigBuckBunny.mp4'
 ```
-![Imatge Original](image.jpg)
-
-
 ## Exercici 1 - Conversió de Vídeo a MP2
 
 Aquest exercici demostra com convertir un fitxer de vídeo a un format MP2 utilitzant `ffmpeg`. La funció `convert_video_to_mpeg` realitza aquesta conversió i guarda la informació del vídeo en un fitxer de text.
 
 ```python
-# Definim path de la imatge
-img = '/Users/perequilez/Desktop/image.jpg' # Exemple
+def convert_video_to_mpeg(input_video, output_mp2_file, info_file='video_info.txt'):
+    try:
+        # Utilitzem 'ffmpeg' per convertir el vídeo d'entrada a un fitxer de vídeo MP2
+        conversion_command = f'ffmpeg -i "{input_video}" -c:v mpeg2video -q:v 2 -an "{output_mp2_file}"'
+        # Executem la comanda 'ffmpeg' per realitzar la conversió
+        subprocess.run(conversion_command, shell=True)
+
+        # Utilitzem 'ffmpeg' per analitzar la informació del vídeo i guardar-la en un fitxer de text
+        info_command = f'ffmpeg -i "{output_mp2_file}" 2> "{info_file}"'
+        # Executem la comanda 'ffmpeg' per obtenir la informació del vídeo
+        subprocess.run(info_command, shell=True)
+
+        return True, f"Vídeo convertit a MP2, desat com a {output_mp2_file} i informació desada com a {info_file}"
+    except subprocess.CalledProcessError as e:
+        # Si hi ha un error en l'execució de les comandes 'ffmpeg', capturem l'excepció i la retornem
+        return False, str(e)
 ```
 #### Resultat exercici 1:
-```python
-
-```
+![Imatge Original](video_info.txt)
 
 ## Exercici 2 - Modificació de la Resolució del Vídeo
 
