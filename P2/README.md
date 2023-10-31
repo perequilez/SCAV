@@ -17,11 +17,11 @@ bunny = '/Users/perequilez/Desktop/BigBuckBunny.mp4'
 ```
 Tenint en compte la sea informació la qual es veurà modificada com veurem, en els següents exercicis:
 
+![Vídeo Original](Informació_vídeo_original.png)
+
 ## Exercici 1 - Conversió de Vídeo a MP2
 
 Aquest exercici demostra com convertir un fitxer de vídeo a un format MP2 utilitzant `ffmpeg`. La funció `convert_video_to_mpeg` realitza aquesta conversió i guarda la informació del vídeo en un fitxer de text.
-
-![Vídeo Original](Informació_vídeo_original.png)
 
 ```python
 def convert_video_to_mpeg(input_video, output_mp2_file, info_file='video_info.txt'):
