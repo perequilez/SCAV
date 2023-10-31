@@ -38,7 +38,9 @@ def convert_video_to_mpeg(input_video, output_mp2_file, info_file='video_info.tx
         return False, str(e)
 ```
 #### Resultat exercici 1:
-Podeu trobar el resultat de l'exercici en el mateix repositori 
+Podeu trobar el resultat de l'exercici en el mateix repositori P2/video_info.txt.
+En el cas del video haureu d'executar el codi per veure el resultat:
+![Imatge Original](Output_EX1.jpg)
 
 ## Exercici 2 - Modificació de la Resolució del Vídeo
 
