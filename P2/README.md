@@ -15,9 +15,13 @@ I definim el path del video "Big Buck Bunny":
 #  Definim el path del video "Big Buck Bunny"
 bunny = '/Users/perequilez/Desktop/BigBuckBunny.mp4'
 ```
+Tenint en compte la sea informació la qual es veurà modificada com veurem, en els següents exercicis:
+
 ## Exercici 1 - Conversió de Vídeo a MP2
 
 Aquest exercici demostra com convertir un fitxer de vídeo a un format MP2 utilitzant `ffmpeg`. La funció `convert_video_to_mpeg` realitza aquesta conversió i guarda la informació del vídeo en un fitxer de text.
+
+![Imatge Original](Informació_vídeo_original.png)
 
 ```python
 def convert_video_to_mpeg(input_video, output_mp2_file, info_file='video_info.txt'):
@@ -41,18 +45,29 @@ def convert_video_to_mpeg(input_video, output_mp2_file, info_file='video_info.tx
 Podeu trobar el resultat de l'exercici en el mateix repositori P2/video_info.txt.
 
 En el cas del video haureu d'executar el codi per veure el resultat:
+
 ![Imatge Original](Output_EX1.png)
 
 ## Exercici 2 - Modificació de la Resolució del Vídeo
 
 Aquest exercici implica la modificació de la resolució d'un vídeo utilitzant ffmpeg. La funció modify_resolution realitza aquesta operació.
 ```python
+def modify_resolution(input_video, output_video, width, height):
+    try:
+        # Utilitzem 'ffmpeg' per modificar la resolució del vídeo
+        ffmpeg_command = f'ffmpeg -i {input_video} -vf "scale={width}:{height}" {output_video}'
+        # Executem la comanda 'ffmpeg' per canviar la resolució del vídeo d'entrada i guardar-lo com a vídeo de sortida
+        subprocess.run(ffmpeg_command, shell=True, check=True)
 
+        return True, f"Resolució del vídeo modificada i desada com a {output_video}"
+    except subprocess.CalledProcessError as e:
+        # Si hi ha un error en l'execució de la comanda 'ffmpeg', capturem l'excepció i la retornem
+        return False, str(e)
 ```
-#### Resultat exercici 1:
-```python
+#### Resultat exercici 2:
+En el cas del video haureu d'executar el codi per veure el resultat:
+![Imatge Original](Output_EX2.png)
 
-```
 ## Exercici 3 - Canvi de Submostreig de Cromàtica
 
 Aquest exercici implica el canvi de submostreig de cromàtica d'un vídeo utilitzant ffmpeg. La funció change_chroma_subsampling realitza aquesta operació.
