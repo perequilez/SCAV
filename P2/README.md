@@ -73,12 +73,21 @@ En el cas del video haureu d'executar el codi per veure el resultat:
 Aquest exercici implica el canvi de submostreig de cromàtica d'un vídeo utilitzant ffmpeg. La funció change_chroma_subsampling realitza aquesta operació.
 
 ```python
+def change_chroma_subsampling(input_video, output_video, subsampling):
+    try:
+        # Utilitzem 'ffmpeg' per canviar el submostreig de croma del vídeo d'entrada
+        ffmpeg_command = f'ffmpeg -i {input_video} -vf "format={subsampling}" -c:a copy {output_video}'
+        # Executem la comanda 'ffmpeg' per realitzar el canvi de submostreig de croma
+        subprocess.run(ffmpeg_command, shell=True, check=True)
 
+        return True, f"Submostreig de croma canviat i desat com a {output_video}"
+    except subprocess.CalledProcessError as e:
+        # Si hi ha un error en l'execució de la comanda 'ffmpeg', capturem l'excepció i la retornem
+        return False, str(e)
 ```
 #### Resultat exercici 3:
-```python
-
-```
+En el cas del video haureu d'executar el codi per veure el resultat:
+![Resultat_EX2](Output_EX3.png)
 
 ## Exercici 4 - Lectura de la Informació del Vídeo
 
@@ -88,9 +97,8 @@ Aquest exercici implica la lectura i impressió de la informació d'un vídeo en
 
 ```
 #### Resultat exercici 4:
-```python
-
-```
+En el cas del video haureu d'executar el codi per veure el resultat:
+![Resultat_EX2](Output_EX4.png)
 
 ## Exercici 5 - Extracció d'un Marc Aleatori i Conversió a Blanc i Negre
 
