@@ -21,7 +21,7 @@ Tenint en compte la sea informació la qual es veurà modificada com veurem, en 
 
 Aquest exercici demostra com convertir un fitxer de vídeo a un format MP2 utilitzant `ffmpeg`. La funció `convert_video_to_mpeg` realitza aquesta conversió i guarda la informació del vídeo en un fitxer de text.
 
-![Imatge Original](Informació_vídeo_original.png)
+![Vídeo Original](Informació_vídeo_original.png)
 
 ```python
 def convert_video_to_mpeg(input_video, output_mp2_file, info_file='video_info.txt'):
@@ -46,7 +46,7 @@ Podeu trobar el resultat de l'exercici en el mateix repositori P2/video_info.txt
 
 En el cas del video haureu d'executar el codi per veure el resultat:
 
-![Imatge Original](Output_EX1.png)
+![Resultat EX1](Output_EX1.png)
 
 ## Exercici 2 - Modificació de la Resolució del Vídeo
 
@@ -66,7 +66,7 @@ def modify_resolution(input_video, output_video, width, height):
 ```
 #### Resultat exercici 2:
 En el cas del video haureu d'executar el codi per veure el resultat:
-![Imatge Original](Output_EX2.png)
+![Resultat_EX2](Output_EX2.png)
 
 ## Exercici 3 - Canvi de Submostreig de Cromàtica
 
