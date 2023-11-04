@@ -50,7 +50,7 @@ En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
 ## Exercici 2 - Modificació de la Resolució del Vídeo
 
-Aquest exercici implica la modificació de la resolució d'un vídeo utilitzant 'ffmpeg'. La funció 'modify_resolution' realitza aquesta operació.
+Aquest exercici implica la modificació de la resolució d'un vídeo utilitzant `ffmpeg`. La funció `modify_resolution` realitza aquesta operació.
 ```python
 def modify_resolution(input_video, output_video, width, height):
     try:
@@ -71,7 +71,7 @@ En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
 ## Exercici 3 - Canvi de Submostreig de Cromàtica
 
-Aquest exercici implica el canvi de submostreig de cromàtica d'un vídeo utilitzant 'ffmpeg'. La funció 'change_chroma_subsampling' realitza aquesta operació.
+Aquest exercici implica el canvi de submostreig de cromàtica d'un vídeo utilitzant `ffmpeg`. La funció `change_chroma_subsampling` realitza aquesta operació.
 
 ```python
 def change_chroma_subsampling(input_video, output_video, subsampling):
@@ -93,7 +93,7 @@ En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
 ## Exercici 4 - Lectura de la Informació del Vídeo
 
-Aquest exercici implica la lectura i impressió de la informació d'un vídeo en format 'JSON' utilitzant 'ffprobe'. La funció 'read_video_info' realitza aquesta operació.
+Aquest exercici implica la lectura i impressió de la informació d'un vídeo en format `JSON` utilitzant `ffprobe`. La funció `read_video_info` realitza aquesta operació.
 
 ```python
 def read_video_info(video_path):
@@ -130,7 +130,7 @@ Taxa de bits: 3813575 bps
 ```
 ## Exercici 5 - Extracció d'un Marc Aleatori i Conversió a Blanc i Negre
 
-Aquest exercici implica l'extracció d'un marc aleatori d'un vídeo, que posteriorment es converteix a blanc i negre. Aquest exercici fa servir la funció 'extract_random_frame_and_convert_to_bw' i inclou una crida a una funció addicional.
+Aquest exercici implica l'extracció d'un marc aleatori d'un vídeo, que posteriorment es converteix a blanc i negre. Aquest exercici fa servir la funció `extract_random_frame_and_convert_to_bw` i inclou una crida a una funció addicional.
 
 ```python
 def extract_random_frame_and_convert_to_bw(video_path, output_image_path, quality=2):
@@ -160,7 +160,7 @@ Un exemple de resultat sería:
 
 ## Com executar l'script
 
-Per a executar l'script i provar els diversos exercicis, pots utilitzem la funció 'main()' a través de la terminal i especificant el número d'exercici com a argument. Ho podem veure definit a la funció principal, 'main()':
+Per a executar l'script i provar els diversos exercicis, pots utilitzem la funció `main()` a través de la terminal i especificant el número d'exercici com a argument. Ho podem veure definit a la funció principal, `main()`:
 
 ```python
 def main():
