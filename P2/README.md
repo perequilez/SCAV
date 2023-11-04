@@ -71,7 +71,7 @@ En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
 ## Exercici 3 - Canvi de Submostreig de Cromàtica
 
-Aquest exercici implica el canvi de submostreig de cromàtica d'un vídeo utilitzant `ffmpeg`. La funció `change_chroma_subsampling` realitza aquesta operació.
+Aquest exercici implica el canvi de submostreig romàtic d'un vídeo utilitzant `ffmpeg`. La funció `change_chroma_subsampling` realitza aquesta operació.
 
 ```python
 def change_chroma_subsampling(input_video, output_video, subsampling):
