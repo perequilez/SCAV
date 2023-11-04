@@ -3,21 +3,21 @@
 
 ## Descripció
 
-Aquest repositori conté un script de Python que utilitza la utilitat ffmpeg per a realitzar diverses operacions en vídeos. Cada exercici es descriu a continuació juntament amb una captura de la solució i instruccions sobre com exacutar-los.
+Aquest repositori conté un script de Python amb els diferents exercicis de la segona pràctica. Els exercicis es descriuran a continuació, amb instruccions sobre com executar-los.
 
 Primer de tot però, importem la funció "convert_to_bw_and_compress" de la pràctica anterior la qual utilitzarem en l'exercici 5:
 ```python
 # Importem la funció per l'exercici 5
 from rgb_yuv import convert_to_bw_and_compress
 ```
-I definim el path del video "Big Buck Bunny":
+I definim el path del vídeo "Big Buck Bunny", amb el qual realitzarem tots els exercicis:
 ```python
 #  Definim el path del video "Big Buck Bunny"
 bunny = '/Users/perequilez/Desktop/BigBuckBunny.mp4'
 ```
-Tenint en compte la seva informació, la qual es veurà modificada com veurem, en els següents exercicis:
+Tenint en compte la seva informació original, la qual es veurà modificada com veurem, en els següents exercicis:
 
-![Vídeo Original](Informació_vídeo_original.png)
+<img src='Informació_vídeo_original.png' width='300'>
 
 ## Exercici 1 - Conversió de Vídeo a MP2
 
@@ -46,7 +46,7 @@ Podeu trobar el resultat de l'exercici en el mateix repositori P2/video_info.txt
 
 En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
-![Resultat EX1](Output_EX1.png)
+<img src='Output_EX1.png' width='300'>
 
 ## Exercici 2 - Modificació de la Resolució del Vídeo
 
@@ -66,7 +66,8 @@ def modify_resolution(input_video, output_video, width, height):
 ```
 #### Resultat exercici 2:
 En el cas del vídeo haureu d'executar el codi per veure el resultat:
-![Resultat_EX2](Output_EX2.png)
+
+<img src='Output_EX2.png' width='300'>
 
 ## Exercici 3 - Canvi de Submostreig de Cromàtica
 
@@ -87,7 +88,8 @@ def change_chroma_subsampling(input_video, output_video, subsampling):
 ```
 #### Resultat exercici 3:
 En el cas del vídeo haureu d'executar el codi per veure el resultat:
-![Resultat_EX2](Output_EX3.png)
+
+<img src='Output_EX3.png' width='300'>
 
 ## Exercici 4 - Lectura de la Informació del Vídeo
 
@@ -153,11 +155,12 @@ def extract_random_frame_and_convert_to_bw(video_path, output_image_path, qualit
 ```
 #### Resultat exercici 5:
 Un exemple de resultat sería:
-![Resultat_EX5](Output_EX5.jpeg)
+
+<img src='Output_EX5.jpeg' width='500'>
 
 ## Com executar l'script
 
-Per a executar l'script i provar els diversos exercicis, pots utilitzem la funció main() a través de la terminal i especificant el número d'exercici com a argument. Ho podem veure a la funció principal, main():
+Per a executar l'script i provar els diversos exercicis, pots utilitzem la funció main() a través de la terminal i especificant el número d'exercici com a argument. Ho podem veure definit a la funció principal, main():
 
 ```python
 def main():
