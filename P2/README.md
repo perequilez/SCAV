@@ -160,7 +160,7 @@ Un exemple de resultat sería:
 
 ## Com executar l'script
 
-Per a executar l'script i provar els diversos exercicis, pots utilitzem la funció `main()` a través de la terminal i especificant el número d'exercici com a argument. Ho podem veure definit a la funció principal, `main()`:
+Per a executar l'script i provar els diversos exercicis, utilitzem la funció `main()` a través de la terminal i especificant el número d'exercici com a argument. Podem veure els exercicis definits a la funció principal, `main()`:
 
 ```python
 def main():
