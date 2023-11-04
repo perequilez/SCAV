@@ -21,7 +21,7 @@ Tenint en compte la seva informació original, la qual es veurà modificada com 
 
 ## Exercici 1 - Conversió de Vídeo a MP2
 
-Aquest exercici demostra com convertir un fitxer de vídeo a un format MP2 utilitzant `ffmpeg`. La funció `convert_video_to_mpeg` realitza aquesta conversió i guarda la informació del vídeo en un fitxer de text.
+Aquest exercici demostra com convertir un fitxer de vídeo a un format MP2 utilitzant `ffmpeg`. La funció `convert_video_to_mpeg` realitza aquesta conversió, guardant el vídeo de sortida i la seva informació en un fitxer de text.
 
 ```python
 def convert_video_to_mpeg(input_video, output_mp2_file, info_file='video_info.txt'):
@@ -50,7 +50,7 @@ En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
 ## Exercici 2 - Modificació de la Resolució del Vídeo
 
-Aquest exercici implica la modificació de la resolució d'un vídeo utilitzant `ffmpeg`. La funció `modify_resolution` realitza aquesta operació.
+Aquest exercici implica la modificació de la resolució d'un vídeo utilitzant `ffmpeg`. La funció `modify_resolution` realitza aquesta operació i guarda el vídeo de sortida.
 ```python
 def modify_resolution(input_video, output_video, width, height):
     try:
@@ -71,7 +71,7 @@ En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
 ## Exercici 3 - Canvi de Submostreig de Cromàtica
 
-Aquest exercici implica el canvi de submostreig romàtic d'un vídeo utilitzant `ffmpeg`. La funció `change_chroma_subsampling` realitza aquesta operació.
+Aquest exercici implica el canvi de submostreig romàtic d'un vídeo utilitzant `ffmpeg`. La funció `change_chroma_subsampling` realitza aquesta operació i guarda el vídeo de sortida.
 
 ```python
 def change_chroma_subsampling(input_video, output_video, subsampling):
@@ -93,7 +93,7 @@ En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
 ## Exercici 4 - Lectura de la Informació del Vídeo
 
-Aquest exercici implica la lectura i impressió de la informació d'un vídeo en format `JSON` utilitzant `ffprobe`. La funció `read_video_info` realitza aquesta operació.
+Aquest exercici implica la lectura i impressió de la informació d'un vídeo en format `JSON` utilitzant `ffprobe`. La funció `read_video_info` realitza aquesta operació i mostra la informació per pantalla.
 
 ```python
 def read_video_info(video_path):
@@ -130,7 +130,8 @@ Taxa de bits: 3813575 bps
 ```
 ## Exercici 5 - Extracció d'un Marc Aleatori i Conversió a Blanc i Negre
 
-Aquest exercici implica l'extracció d'un marc aleatori d'un vídeo, que posteriorment es converteix a blanc i negre. Aquest exercici fa servir la funció `extract_random_frame_and_convert_to_bw` i inclou una crida a una funció addicional.
+En quest exercici extreiem un frame aleatori del vídeo d'entrada, el qual posteriorment es converteix a blanc i negre a través de la funció de la pràctica anterior `convert_to_bw_and_compress`, la qual hem importat al principi de la pràctica. La funció `extract_random_frame_and_convert_to_bw` realitza aquesta operació i guarda la imatge/frame de sortida.
+
 
 ```python
 def extract_random_frame_and_convert_to_bw(video_path, output_image_path, quality=2):
@@ -160,7 +161,7 @@ Un exemple de resultat sería:
 
 ## Com executar l'script
 
-Per a executar l'script i provar els diversos exercicis, utilitzem la funció `main()` a través de la terminal i especificant el número d'exercici com a argument. Podem veure els exercicis definits a la funció principal, `main()`:
+Per a executar l'script i provar els diversos exercicis, utilitzem la funció `main()`, a través de la terminal i especificant el número d'exercici com a argument. Podem veure els exercicis definits a la funció principal, `main()`:
 
 ```python
 def main():
@@ -195,7 +196,7 @@ if __name__ == "__main__":
 
 Per tal d'executar un exercici:
 Exemple: `python3 python_video.py 1`
-Això executarà l'exercici 1 amb els valors indicats en el main i proporcionarà els resultats. 
+Això executarà l'exercici 1 amb els valors indicats en el `main()` i proporcionarà els resultats. 
 
 Canviant el número "1" de la comanda podràs executar els diferents exercicis, introduïnt un número de (1-5).
 
