@@ -69,9 +69,9 @@ En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
 <img src='Output_EX2.png' width='300'>
 
-## Exercici 3 - Canvi de Submostreig de Cromàtica
+## Exercici 3 - Canvi de Submostreig de Cromàtic
 
-Aquest exercici implica el canvi de submostreig romàtic d'un vídeo utilitzant `ffmpeg`. La funció `change_chroma_subsampling` realitza aquesta operació i guarda el vídeo de sortida.
+Aquest exercici implica el canvi de submostreig cromàtic d'un vídeo utilitzant `ffmpeg`. La funció `change_chroma_subsampling` realitza aquesta operació i guarda el vídeo de sortida.
 
 ```python
 def change_chroma_subsampling(input_video, output_video, subsampling):
