@@ -187,7 +187,7 @@ def main():
         success, message =extract_random_frame_and_convert_to_bw(bunny, 'random_frame_bw.jpeg', quality=2)  # Executem la funció 'extract_random_frame_and_convert_to_bw' amb els arguments especificats
         print("EXERCICI 5:", message)
     else:  # Si l'argument 'exercici' no coincideix amb cap dels valors anteriors
-        print("Número d'exercici no vàlid. Si us plau, introduïu un número d'exercici entre 1 i 4.")  # Mostrem un missatge d'error
+        print("Número d'exercici no vàlid. Si us plau, introduïu un número d'exercici entre 1 i 5.")  # Mostrem un missatge d'error
 
 
 if __name__ == "__main__":
