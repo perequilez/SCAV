@@ -128,7 +128,7 @@ Taxa de quadres: 60/1
 Durada: 634.566667 segons
 Taxa de bits: 3813575 bps
 ```
-## Exercici 5 - Extracció d'un Marc Aleatori i Conversió a Blanc i Negre
+## Exercici 5 - Extracció d'un frame aleatori i conversió a Blanc i Negre
 
 En quest exercici extreiem un frame aleatori del vídeo d'entrada, el qual posteriorment es converteix a blanc i negre a través de la funció de la pràctica anterior `convert_to_bw_and_compress`, la qual hem importat al principi de la pràctica. La funció `extract_random_frame_and_convert_to_bw` realitza aquesta operació i guarda la imatge/frame de sortida.
 
