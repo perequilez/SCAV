@@ -36,7 +36,7 @@ Aquest exercici utilitza la biblioteca 'ffmpeg' per afegir un overlay al vídeo 
     @staticmethod
     def display_macroblocks_and_vectors(input_video, output_video):
         try:
-            # Utilitzen ffmpeg per afegir l'overlay amb els blocs macro i vectors de moviment
+            # Utilitzem ffmpeg per afegir l'overlay amb els blocs macro i vectors de moviment
             overlay_command = f'ffmpeg -flags2 +export_mvs -i {input_video} -vf codecview=mv=pf+bf+bb {output_video}'
             subprocess.run(overlay_command, shell=True)
             return True, f"Overlay aplicat i desat com a {output_video}"
