@@ -197,11 +197,22 @@ Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una
 
 Aquest exercici fa servir la comanda ffplay per mostrar l'histograma YUV d'un vídeo. 
 ```python
-# EXERCICI 5
-    elif args.exercici == 5:
-        # Executem l'Exercici 4 per processar un vídeo amb subtítols
-        download_and_integrate_subtitles(bunny_9s, "https://github.com/perequilez/SCAV/blob/main/P3/subtitles.srt","output_video_EX5.mp4", "subtitles.srt")
-        print("Operació completada. Subtítols integrats i vídeo desat.")
+# EXERCICI 6
+def extract_and_show_yuv_histogram(input_video, output_video):
+    try:
+        # Utilitzem la comanda ffplay per extreure i mostrar l'histograma YUV
+        yuv_histogram_command = [
+            'ffplay', input_video, '-vf', 'split=2[a][b],[b]histogram,format=yuva444p[hh],[a][hh]overlay',
+            '-vf', 'split=2[a][b],[b]histogram,format=yuva444p[hh],[a][hh]overlay',
+            '-vf', f'scale=1280:720,setsar=1,format=yuv420p -y {output_video}'
+        ]
+        # Executem la comanda
+        subprocess.run(yuv_histogram_command)
+
+        return True, f"YUV histogram extracted and saved as {output_video}"
+
+    except subprocess.CalledProcessError as e:
+        return False, str(e)
 ```
 #### Resultat exercici 6:
 Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una captura del viídeo resultant:
