@@ -209,3 +209,64 @@ Podeu trobar el resultat de l'exercici en el mateix repositori P3/...
 En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
 <img src='Output_EX6.png' width='300'>
+
+## Com executar l'script
+
+Per a executar l'script i provar els diversos exercicis, utilitzem la funció `main()`, a través de la terminal i especificant el número d'exercici com a argument. Podem veure els exercicis definits a la funció principal, `main()`:
+
+```python
+
+if __name__ == "__main__":
+    # Creem un analitzador d'arguments de línia de comandes
+    parser = argparse.ArgumentParser(
+        description='Executa un exercici específic')  # Creem un objecte d'analitzador d'arguments amb una descripció
+    parser.add_argument('exercici', type=int,
+                        help="Número de l'exercici (1-3,5 o 6)")  # Afegim un argument que espera un número d'exercici
+    args = parser.parse_args()  # Analitzem els arguments de la línia de comandes
+
+    if args.exercici == 1:
+        # Executem l'Exercici 1 per afegir l'overlay de macroblocs i vectors de moviment
+        success, message = VideoAnalyzer.display_macroblocks_and_vectors(bunny_9s, 'output_EX1.mp4')
+        if success:
+            print(f"Operació completada amb èxit: {message}")
+        else:
+            print(f"Error: {message}")
+
+    elif args.exercici == 2:
+        # Executem l'Exercici 2 per crear un nou contenidor de vídeo
+        success, message = VideoAnalyzer.create_new_video_container(bunny, 'output_EX2.mp4')
+        if success:
+            print(f"Operació completada amb èxit: {message}")
+        else:
+            print(f"Error: {message}")
+
+    elif args.exercici == 3:
+        # Executem l'Exercici 3 per comptar les pistes del vídeo d'entrada
+        VideoAnalyzer.count_tracks("output_EX2.mp4")
+    # EXERCICI 5
+    elif args.exercici == 5:
+        # Executem l'Exercici 4 per processar un vídeo amb subtítols
+        download_and_integrate_subtitles(bunny_9s, "https://github.com/perequilez/SCAV/blob/main/P3/subtitles.srt","Output_EX5.mp4", "Subtitles.srt")
+        print("Operació completada. Subtítols integrats i vídeo desat.")
+
+    elif args.exercici == 6:
+        # Executem l'Exercici 6 per extreure l'histograma YUV
+        success, message = extract_and_show_yuv_histogram(bunny, "output_EX6.mp4")
+        if success:
+            print(f"Operació completada amb èxit: {message}")
+        else:
+            print(f"Error: {message}")
+
+    else:
+        print("Número d'exercici no vàlid. Si us plau, trieu un exercici entre 1,2,3,5,6.")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Per tal d'executar un exercici:
+Exemple: `python3 python_video_2.py 1`
+Això executarà l'exercici 1 amb els valors indicats en el `main()` i proporcionarà els resultats. 
+
+Canviant el número "1" de la comanda podràs executar els diferents exercicis, introduïnt un número entre 1,2,3,5,6.
