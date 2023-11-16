@@ -148,7 +148,7 @@ Pista 5:
 
 ## Exercici 4 - Descarregar i Integrar Subtítols
 
-Aquest exercici descarrega subtítols d'una URL i utilitza la comanda ffmpeg per integrar subtítols al vídeo d'entrada, creant així un nou fitxer de vídeo amb els subtítols inclosos.
+Aquest exercici descarrega subtítols d'una URL (dirigida al mateix repositori, "subtitles.str") i utilitza la comanda ffmpeg per integrar subtítols al vídeo d'entrada, creant així un nou fitxer de vídeo amb els subtítols inclosos.
 
 ```python
 # EXERCICI 4
