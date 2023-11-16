@@ -5,7 +5,7 @@
 
 Aquest repositori conté un script de Python amb els diferents exercicis de la tercera pràctica. Els exercicis es descriuran a continuació, amb instruccions sobre com executar-los.
 
-Primer de tot però, importem les funcions "download_and_integrate_subtitles" i "extract_and_show_yuv_histogram" dels fitxers .py auxilars per tal de poder executar els exercicis 5 i 6:
+Primer de tot però, importem les funcions "download_and_integrate_subtitles" i "extract_and_show_yuv_histogram" dels fitxers .py auxilars per els exercicis 4,5 i 6:
 ```python
 # Importem les dues funcions necessàrries dels fitxers auxiliars per tal de poder realitzar els exercicis 5 i 6:
 from python_video_2_Ex4 import download_and_integrate_subtitles
@@ -194,4 +194,4 @@ Podeu trobar el resultat de l'exercici en el mateix repositori P3/...
 
 En el cas del vídeo haureu d'executar el codi per veure el resultat:
 
-<img src='Output_EX2.png' width='300'>
+<img src='Output_EX6.png' width='300'>
