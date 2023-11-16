@@ -11,7 +11,7 @@ Primer de tot però, importem les funcions "download_and_integrate_subtitles" i 
 from python_video_2_Ex4 import download_and_integrate_subtitles
 from python_video_2_Ex6 import extract_and_show_yuv_histogram
 ```
-I definim el path dels vídeos "Big Buck Bunny" i "Big Buck Bunny", amb els quals realitzarem els exercicis:
+També definim el path dels vídeos "Big Buck Bunny" i "Big Buck Bunny", amb els quals realitzarem els exercicis:
 ```python
 #  Definim el path del video "Big Buck Bunny de 9s"
 bunny_9s = '/Users/perequilez/Desktop/BigBuckBunny_9s.mp4'
@@ -19,7 +19,7 @@ bunny_9s = '/Users/perequilez/Desktop/BigBuckBunny_9s.mp4'
 #  Definim el path del video "Big Buck Bunny"
 bunny = '/Users/perequilez/Desktop/BigBuckBunny.mp4'
 ```
-Abans de començar amb els exercicis, tal i com es demana en l'exercici 1 creem una classe "VideoAnalyzer" en la qual hi implementarem alguns dels exercicis de la pràctica:
+Abans de començar amb els exercicis, tal i com es demana en l'exercici 1 creem una classe "VideoAnalyzer" en la qual hi implementarem els exercicis 1,2,3 de la pràctica:
 ```python
 class VideoAnalyzer:
           .
