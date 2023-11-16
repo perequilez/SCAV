@@ -180,7 +180,7 @@ def download_and_integrate_subtitles(video_file, url, output_video_file, output_
 
 ## Exercici 5 - Descarregar i Integrar Subtítols
 
-En aquest exercici, es realitza una herència (en les primerres linies del fitxer de codi) del nou script creat en l'exercici anterior. Després, es crida a aquesta funció heretada per executar-la, en la funió principal main().
+En aquest exercici, es realitza una herència (en les primeres linies del fitxer de codi) del nou script creat en l'exercici anterior. Després, es crida a aquesta funció heretada per executar-la, en la funió principal main().
 ```python
 # EXERCICI 5
     elif args.exercici == 5:
@@ -189,9 +189,9 @@ En aquest exercici, es realitza una herència (en les primerres linies del fitxe
         print("Operació completada. Subtítols integrats i vídeo desat.")
 ```
 #### Resultat exercici 5:
-Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una captura del viídeo resultant:
+Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una captura del vídeo resultant:
 
-<img src='Output_EX2.png' width='300'>
+<img src='Output_EX5.png' width='300'>
 
 ## Exercici 6 - Descarregar i Integrar Subtítols
 
