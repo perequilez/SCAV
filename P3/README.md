@@ -87,9 +87,7 @@ Aquest exercici crea un nou contenidor de vídeo a partir d'una secció de 50 se
             return False, str(e)
 ```
 #### Resultat exercici 2:
-Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una captura del viídeo resultant:
-
-<img src='Output_EX2.png' width='300'>
+Per tal de veure el vídeo haureu d'executar el codi. En aquest cas el vídeo de sortida en si és el mateix però retallat 50s i amb els contenidors que hem creat.
 
 ## Exercici 3 - Comptar Pistes de Vídeo
 
@@ -191,7 +189,9 @@ En aquest exercici, es realitza una herència (en les primerres linies del fitxe
         print("Operació completada. Subtítols integrats i vídeo desat.")
 ```
 #### Resultat exercici 5:
-Per tal de veure el vídeo haureu d'executar el codi. En aquest cas el vídeo de sortida en si és el mateix però retallat 50s i amb els contenidors que hem creat.
+Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una captura del viídeo resultant:
+
+<img src='Output_EX2.png' width='300'>
 
 ## Exercici 6 - Descarregar i Integrar Subtítols
 
@@ -204,9 +204,7 @@ Aquest exercici descarrega subtítols d'una URL i utilitza la comanda ffmpeg per
         print("Operació completada. Subtítols integrats i vídeo desat.")
 ```
 #### Resultat exercici 6:
-Podeu trobar el resultat de l'exercici en el mateix repositori P3/...
-
-En el cas del vídeo haureu d'executar el codi per veure el resultat:
+Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una captura del viídeo resultant:
 
 <img src='Output_EX6.png' width='300'>
 
