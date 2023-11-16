@@ -5,7 +5,7 @@
 
 Aquest repositori conté un script de Python amb els diferents exercicis de la tercera pràctica. Els exercicis es descriuran a continuació, amb instruccions sobre com executar-los.
 
-Primer de tot però, importem les funcions "download_and_integrate_subtitles" i "extract_and_show_yuv_histogram" dels fitxers .py auxilars per els exercicis 4,5 i 6:
+Primer de tot però, importem les funcions "download_and_integrate_subtitles" i "extract_and_show_yuv_histogram" dels fitxers .py auxilars per a realitzar els exercicis 4,5 i 6:
 ```python
 # Importem les dues funcions necessàrries dels fitxers auxiliars per tal de poder realitzar els exercicis 5 i 6:
 from python_video_2_Ex4 import download_and_integrate_subtitles
@@ -36,7 +36,7 @@ Aquest exercici utilitza la biblioteca 'ffmpeg' per afegir un overlay al vídeo 
     @staticmethod
     def display_macroblocks_and_vectors(input_video, output_video):
         try:
-            # Comanda per afegir l'overlay amb els blocs macro i vectors de moviment
+            # Utilitzen ffmpeg per afegir l'overlay amb els blocs macro i vectors de moviment
             overlay_command = f'ffmpeg -flags2 +export_mvs -i {input_video} -vf codecview=mv=pf+bf+bb {output_video}'
             subprocess.run(overlay_command, shell=True)
             return True, f"Overlay aplicat i desat com a {output_video}"
@@ -45,7 +45,7 @@ Aquest exercici utilitza la biblioteca 'ffmpeg' per afegir un overlay al vídeo 
             return False, str(e)
 ```
 #### Resultat exercici 1:
-Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una captura del viídeo resultant:
+Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una captura del vídeo resultant:
 
 <img src='Output_EX1.png' width='300'>
 
@@ -59,7 +59,7 @@ Aquest exercici crea un nou contenidor de vídeo a partir d'una secció de 50 se
     @staticmethod
     def create_new_video_container(input_video, output_video):
         try:
-            # Utilitzen ffmpeg per tallar el vídeo d'entrada als primers 50 segons
+            # Utilitzem ffmpeg per tallar el vídeo d'entrada als primers 50 segons
             cut_video_command = f'ffmpeg -i {input_video} -ss 00:00:00 -t 00:00:50 -c:a copy {"temp_cut.mp4"}'
             subprocess.run(cut_video_command, shell=True)
 
@@ -67,19 +67,19 @@ Aquest exercici crea un nou contenidor de vídeo a partir d'una secció de 50 se
             export_mp3_mono_command = f'ffmpeg -i {"temp_cut.mp4"} -vn -ar 44100 -ac 1 -ab 192k -f mp3 {"temp_mono.mp3"}'
             subprocess.run(export_mp3_mono_command, shell=True)
 
-            # Utilitzen ffmpeg per exportar l'àudio del vídeo tallat com a MP3 estèreo amb bitrate més baix
+            # Utilitzem ffmpeg per exportar l'àudio del vídeo tallat com a MP3 estèreo amb bitrate més baix
             export_mp3_stereo_low_bitrate_command = f'ffmpeg -i {"temp_cut.mp4"} -vn -ar 44100 -ac 2 -ab 128k -f mp3 {"temp_stereo_low.mp3"}'
             subprocess.run(export_mp3_stereo_low_bitrate_command, shell=True)
 
-            # Utilitzen ffmpeg per exportar l'àudio del vídeo tallat en format AAC
+            # Utilitzem ffmpeg per exportar l'àudio del vídeo tallat en format AAC
             export_aac_command = f'ffmpeg -i {"temp_cut.mp4"} -vn -c:a aac -strict -2 -b:a 128k {"temp_aac.aac"}'
             subprocess.run(export_aac_command, shell=True)
 
-            # Utilitzen ffmpeg per combinar el vídeo tallat amb els tres fitxers d'àudio exportats
+            # Utilitzem ffmpeg per combinar el vídeo tallat amb els tres fitxers d'àudio exportats
             combine_video_audio_command = f'ffmpeg -i {"temp_cut.mp4"} -i {"temp_mono.mp3"} -i {"temp_stereo_low.mp3"} -i {"temp_aac.aac"} -map 0 -map 1 -map 2 -map 3 -c:v copy -c:a copy {output_video}'
             subprocess.run(combine_video_audio_command, shell=True)
 
-            # Eliminen els fitxers temporals utilitzats en els processos anteriors
+            # Eliminem els fitxers temporals utilitzats en els processos anteriors
             subprocess.run('rm temp_cut.mp4 temp_mono.mp3 temp_stereo_low.mp3 temp_aac.aac', shell=True)
 
             return True, f'Creat un nou contenidor de vídeo com a {output_video}'
@@ -105,7 +105,7 @@ Aquest exercici fa servir la comanda ffprobe per obtenir informació detallada s
         # La sortida exitosa conté informació detallada sobre les pistes
         tracks_info = json.loads(result.stdout)
 
-        # Imprimim informació sobre cada pista
+        # Imprimim la informació sobre cada pista
         for i, track in enumerate(tracks_info["streams"], start=1):
             print(f"Pista {i}:\n"
                   f"  Tipus: {track['codec_type']}\n"
@@ -180,7 +180,7 @@ def download_and_integrate_subtitles(video_file, url, output_video_file, output_
 
 ## Exercici 5 - Descarregar i Integrar Subtítols
 
-En aquest exercici, es realitza una herència (en les primeres linies del fitxer de codi) del nou script creat en l'exercici anterior. Després, es crida a aquesta funció heretada per executar-la, en la funió principal main().
+En aquest exercici, es realitza una herència (explicat al pricnipi del fitxer README) del nou script creat en l'exercici anterior. Després, es crida a aquesta funció heretada per executar-la, en la funió principal main().
 ```python
 # EXERCICI 5
     elif args.exercici == 5:
@@ -195,7 +195,7 @@ Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una
 
 ## Exercici 6 - Descarregar i Integrar Subtítols
 
-Aquest exercici descarrega subtítols d'una URL i utilitza la comanda ffmpeg per integrar subtítols al vídeo d'entrada, creant així un nou fitxer de vídeo amb els subtítols inclosos.
+Aquest exercici fa servir la comanda ffplay per mostrar l'histograma YUV d'un vídeo. 
 ```python
 # EXERCICI 5
     elif args.exercici == 5:
