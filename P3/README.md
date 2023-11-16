@@ -45,9 +45,7 @@ Aquest exercici utilitza la biblioteca 'ffmpeg' per afegir un overlay al vídeo 
             return False, str(e)
 ```
 #### Resultat exercici 1:
-Podeu trobar el resultat de l'exercici en el mateix repositori P3/...
-
-En el cas del vídeo haureu d'executar el codi per veure el resultat:
+Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una captura del viídeo resultant:
 
 <img src='Output_EX1.png' width='300'>
 
@@ -89,9 +87,7 @@ Aquest exercici crea un nou contenidor de vídeo a partir d'una secció de 50 se
             return False, str(e)
 ```
 #### Resultat exercici 2:
-Podeu trobar el resultat de l'exercici en el mateix repositori P3/...
-
-En el cas del vídeo haureu d'executar el codi per veure el resultat:
+Per tal de veure el vídeo haureu d'executar el codi. Tot seguit podeu veure una captura del viídeo resultant:
 
 <img src='Output_EX2.png' width='300'>
 
@@ -123,12 +119,34 @@ Aquest exercici fa servir la comanda ffprobe per obtenir informació detallada s
 ```
 
 #### Resultat exercici 3:
-Podeu trobar el resultat de l'exercici en el mateix repositori P3/...
+Si executem l'exercici passant-li d'entrada el vídeo de sortida de l'exercici 2 obtenim:
 
-En el cas del vídeo haureu d'executar el codi per veure el resultat:
+```python
+Pista 1:
+  Tipus: video
+  Format: h264
+  Resolució: 1920x1080
 
-<img src='Output_EX2.png' width='300'>
+Pista 2:
+  Tipus: audio
+  Format: aac
+  Resolució: -x-
 
+Pista 3:
+  Tipus: audio
+  Format: mp3
+  Resolució: -x-
+
+Pista 4:
+  Tipus: audio
+  Format: mp3
+  Resolució: -x-
+
+Pista 5:
+  Tipus: audio
+  Format: aac
+  Resolució: -x-
+```
 
 ## Exercici 4 - Descarregar i Integrar Subtítols
 
@@ -173,11 +191,7 @@ En aquest exercici, es realitza una herència (en les primerres linies del fitxe
         print("Operació completada. Subtítols integrats i vídeo desat.")
 ```
 #### Resultat exercici 5:
-Podeu trobar el resultat de l'exercici en el mateix repositori P3/...
-
-En el cas del vídeo haureu d'executar el codi per veure el resultat:
-
-<img src='Output_EX5.png' width='300'>
+Per tal de veure el vídeo haureu d'executar el codi. En aquest cas el vídeo de sortida en si és el mateix però retallat 50s i amb els contenidors que hem creat.
 
 ## Exercici 6 - Descarregar i Integrar Subtítols
 
