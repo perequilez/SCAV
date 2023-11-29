@@ -423,3 +423,55 @@ docker run -it --rm -v $(pwd):/app container_image -i BigBuckBunny_9s.mp4 -i Big
 El video de sortida és el següent:
 
 
+
+## Com executar l'script
+
+Per a executar l'script i provar els diversos exercicis, utilitzem la funció `main()`, a través de la terminal i especificant el número d'exercici com a argument. Podem veure els exercicis definits a la funció principal, `main()`:
+
+```python
+def main():
+    # Creem un analitzador d'arguments de línia de comandes
+    parser = argparse.ArgumentParser(description='Executa un exercici específic')  # Creem un objecte d'analitzador d'arguments amb una descripció
+    parser.add_argument('exercici', type=int, help='Número de l\'exercici (1-8)')  # Afegim un argument que espera un número d'exercici
+    args = parser.parse_args()  # Analitzem els arguments de la línia de comandes
+
+    # Cridem als exercicis basats en l'argument 'exercici'
+    if args.exercici == 1:  # Si l'argument 'exercici' és igual a 1
+        # Executem la funció de modificar resolució
+        VideoConverter.modify_resolution(input_video, f"output_video_EX1", 360, 240)
+    elif args.exercici == 2:  # Si l'argument 'exercici' és igual a 2
+        # Executem la funció de convertir a VP8
+        VideoConverter.convert_to_vp8(input_video, f"output_video_EX1")
+    elif args.exercici == 3:  # Si l'argument 'exercici' és igual a 3
+        # Executem la funció de convertir a VP9
+        VideoConverter.convert_to_vp9(input_video, f"output_video_EX1")
+    elif args.exercici == 4:  # Si l'argument 'exercici' és igual a 4
+        # Executem la funció de convertir a H.265
+        VideoConverter.convert_to_h265(input_video, f"output_video_EX1")
+    elif args.exercici == 5:  # Si l'argument 'exercici' és igual a 5
+        # Executem la funció de convertir a AV1
+        VideoConverter.convert_to_av1(input_video, f"output_video_EX1")
+    elif args.exercici == 6:  # Si l'argument 'exercici' és igual a 6
+        # Executem la funció de comparar vídeos
+        export_video_comparison("output_video_EX1_vp8.webm", "output_video_EX1_vp9.webm", "output_EX2")
+    elif args.exercici == 7:  # Si l'argument 'exercici' és igual a 7
+        # Ruta al script que desitgem executar
+        script_EX_3_path = 'EX_3_GUI.py'
+        # Executem el script
+        subprocess.run(['python', script_EX_3_path])
+    elif args.exercici == 8:  # Si l'argument 'exercici' és igual a 8
+        pass
+    else:  # Si l'argument 'exercici' no coincideix amb cap dels valors anteriors
+        print("Número d'exercici no vàlid. Si us plau, trieu un exercici entre 1 i 8")  # Mostrem un missatge d'error
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+Per tal d'executar un exercici:
+Exemple: python3 VideoConverter.py 1
+Això executarà l'exercici 1 amb els valors indicats en el main() i proporcionarà els resultats.
+
+Canviant el número "1" de la comanda podràs executar els diferents exercicis, introduïnt un número (1-8).
