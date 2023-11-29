@@ -370,3 +370,33 @@ if __name__ == '__main__':
 ```
 
 ## Exercici 4: Docker
+
+## Descripció
+
+Docker és una plataforma que facilita el desenvolupament, la distribució i l'execució d'aplicacions mitjançant contenidors. Aquests contenidors són unitats lleugeres i portàtils que encapsulen software i les seves dependencies. En aquest exercici, l'objectiu és construir un contenidor Docker que contingui FFMPEG, una eina de processament de vídeo, oferint una manera creativa d'utilitzar aquest contenidor per processar alguna cosa. Amb Docker, es pot assegurar la consistència de l'aplicació en diversos entorns, millorar la portabilitat i simplificar la gestió del desplegament de software.
+
+En aquest cas, utilitzarem el Docker per a realitzar la comparació entre dos vídeos. Per a fer-ho hem de seguir diferents passos:
+
+# 4.1. Creació del fitxer Dockerfile:
+
+```python
+# Utilitzem una imatge base amb FFMPEG preinstal·lat
+FROM jrottenberg/ffmpeg:4.2-ubuntu
+
+# Establim el directori de treball
+WORKDIR /app
+
+# Copiem  arxius de vídeo que volem comparar dins el contenidor
+COPY BigBuckBunny_9s.mp4 /app/
+COPY BigBuckBunny_9s_vp8.webm /app/
+
+# Comanda per defecte que s'executarà quan el contenidor comenci
+CMD ["ffmpeg"]
+```
+
+# 4.2. Construcció de la Imatge Docker:
+
+
+# 4.3. Eecució del Contenidor:
+
+# 4.4. Sortida:
