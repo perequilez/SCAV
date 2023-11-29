@@ -122,7 +122,7 @@ La comparativa entre VP8 i VP9 en termes de compressió de vídeo revela diferè
 
 ## Exercici 3: Interfície Gràfica d'Usuari (GUI)
 
-Aquest exercici implementa una interfície gràfica d'usuari (GUI) amb l'ús de la llibreria PyQt5. L'aplicació permet modificar el format d'un vídeo i convertir-lo als formats VP8, VP9, H.265 i AV1. També permet comparar el vídeo d'entrada amb un altre i a part també es pot modificar la resolució d'un vídeo d'entrada. Les funcions utilitzades són les implementades anteriorment i per tant, s'hereten en aquest scrip per utilitzar-les.
+Aquest exercici implementa una interfície gràfica d'usuari (GUI) a través de la llibreria PyQt5. L'aplicació permet modificar el format d'un vídeo i convertir-lo als formats VP8, VP9, H.265 i AV1. També permet comparar el vídeo d'entrada amb un altre i a part també es pot modificar la resolució d'un vídeo d'entrada. Les funcions utilitzades són les implementades anteriorment i per tant, s'hereten en aquest scrip per utilitzar-les.
 
 ```python
 import sys
