@@ -107,6 +107,8 @@ def export_video_comparison(vid_1, vid_2, output_file):
 #### Resultat exercici 2:
 Podeu trobar els resultats de l'exercici en el mateix repositori P4/output_EX2_compared.mp4.
 
+<img src='Output_EX2.png' width='1000'>
+
 ## Exercici 3: Interfície Gràfica d'Usuari (GUI)
 
 Aquest exercici implementa una interfície gràfica d'usuari (GUI) amb l'ús de la llibreria PyQt5. L'aplicació permet modificar el format d'un vídeo i convertir-lo als formats VP8, VP9, H.265 i AV1. També permet comparar el vídeo d'entrada amb un altre i a part també es pot modificar la resolució d'un vídeo d'entrada. Les funcions utilitzades són les implementades anteriorment i per tant, s'hereten en aquest scrip per utilitzar-les.
@@ -414,6 +416,8 @@ Per tal de construïr la imatge executem la següent comanda:
 docker build -t container_image .
 ```
 
+<img src='Construcció imatge.png' width='500'>
+
 ### 4.3. Eecució del Contenidor:
 Per tal d'executar el contenidor i que es realitzi la comparació dels videos utilitzem la seüent comanda:
 
@@ -429,9 +433,12 @@ Per tal d'executar el contenidor i que es realitzi la comparació dels videos ut
 
 docker run -it --rm -v $(pwd):/app container_image -i BigBuckBunny_9s.mp4 -i BigBuckBunny_9s_vp8.webm -filter_complex hstack=inputs=2 /app/container_output.mp4
 ```
+<img src='Execució contenidor Docker.png' width='500'>
 
 ### 4.4. Sortida:
-El video de sortida és el següent:
+Podeu trobar el víde de sortida en el mateix repositori P4/output_EX2_compared.mp4.
+
+<img src='Output_EX4.png' width='1000'>
 
 
 
