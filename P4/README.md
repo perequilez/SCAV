@@ -395,8 +395,31 @@ CMD ["ffmpeg"]
 ```
 
 ### 4.2. Construcció de la Imatge Docker:
+Per tal de construïr la imatge executem la següent comanda:
 
+```python
+# Construïm una imatge de contenidor amb l'etiqueta "container_image" a partir del context actual (".")
+docker build -t container_image .
+```
 
 ### 4.3. Eecució del Contenidor:
+Per tal d'executar el contenidor i que es realitzi la comparació dels videos utilitzem la seüent comanda:
+
+```python
+# Executem un contenidor amb les següents opcions:
+#   -it: Connecta el terminal interactiu del contenidor a l'entrada estàndard
+#   --rm: Elimina el contenidor després de la seva execució
+#   -v $(pwd):/app: Monta el directori actual a /app dins del contenidor
+# container_image: Utilitza l'imatge de contenidor amb l'etiqueta "container_image"
+# -i BigBuckBunny_9s.mp4 -i BigBuckBunny_9s_vp8.webm: Especifica els fitxers d'entrada dins del contenidor
+# -filter_complex hstack=inputs=2: Aplica el filtre complex per a apilar els dos vídeos horitzontalment
+# /app/container_output.mp4: Especifica el fitxer de sortida dins del contenidor
+
+docker run -it --rm -v $(pwd):/app container_image -i BigBuckBunny_9s.mp4 -i BigBuckBunny_9s_vp8.webm -filter_complex hstack=inputs=2 /app/container_output.mp4
+```
 
 ### 4.4. Sortida:
+
+El video de sortida és el següent:
+
+
