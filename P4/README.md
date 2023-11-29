@@ -109,6 +109,9 @@ Podeu trobar els resultats de l'exercici en el mateix repositori P4/output_EX2_c
 
 <img src='Output_EX2.png' width='1000'>
 
+El vídeo de sortida està comparant el mateix vídeo en formatsdiferents, vp8 (esquerre) i vp9 (dreta).
+La comparativa entre VP8 i VP9 en termes de compressió de vídeo revela diferències notables. Mentre que VP9 ofereix una qualitat superior i una millor compressió, VP8 és més lleuger. VP9 és ideal per a resolucions altes, destacant-se amb vídeos en HD i UHD, tot i que pot no ser totalment compatible amb alguns dispositius. D'altra banda, VP8 és més adequat per a contingut estàndard, amb una millor compatibilitat i menys consum de recursos. La decisió entre ambdós codecs dependrà de les necessitats específiques, prioritzant qualitat, compatibilitat o eficiència en funció del context d'ús.
+
 ## Exercici 3: Interfície Gràfica d'Usuari (GUI)
 
 Aquest exercici implementa una interfície gràfica d'usuari (GUI) amb l'ús de la llibreria PyQt5. L'aplicació permet modificar el format d'un vídeo i convertir-lo als formats VP8, VP9, H.265 i AV1. També permet comparar el vídeo d'entrada amb un altre i a part també es pot modificar la resolució d'un vídeo d'entrada. Les funcions utilitzades són les implementades anteriorment i per tant, s'hereten en aquest scrip per utilitzar-les.
