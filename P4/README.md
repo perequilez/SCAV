@@ -99,10 +99,17 @@ Aquest exercici permet comparar dos vídeos i crear un nou vídeo ambdós un al 
 
 ```python
 # EXERCICI 2
-def export_video_comparison(vid_1, vid_2, output_file):
-    # Utilitzem ffmpeg per superposar els vídeos VP8 i VP9 costat per costat
-    command = f"ffmpeg -i {vid_1} -i {vid_2} -filter_complex hstack=inputs=2 {output_file}_compared.mp4"
-    subprocess.call(command, shell=True)
+
+def modify_resolution(input_video, output_video, width, height):
+    try:
+        # Utilitzem 'ffmpeg' per modificar la resolució del vídeo
+        ffmpeg_command = (f'ffmpeg -i {input_video} -vf "scale={width}:{height}" {output_video}_{width}x{height}_.mp4')
+        # Executem la comanda 'ffmpeg' per canviar la resolució del vídeo d'entrada i guardar-lo com a vídeo de sortida
+        subprocess.run(ffmpeg_command, shell=True, check=True)
+        return True, f"Hem modificat la resolució del vídeo i l'hem guardat com a {output_video}"
+    except subprocess.CalledProcessError as e:
+        # Si hi ha un error en l'execució de la comanda 'ffmpeg', capturem l'excepció i la retornem
+        return False, str(e)
 ```
 #### Resultat exercici 2:
 Podeu trobar els resultats de l'exercici en el mateix repositori P4/output_EX2_compared.mp4.
