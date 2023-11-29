@@ -377,7 +377,7 @@ Docker és una plataforma que facilita el desenvolupament, la distribució i l'e
 
 En aquest cas, utilitzarem el Docker per a realitzar la comparació entre dos vídeos. Per a fer-ho hem de seguir diferents passos:
 
-# 4.1. Creació del fitxer Dockerfile:
+### 4.1. Creació del fitxer Dockerfile:
 
 ```python
 # Utilitzem una imatge base amb FFMPEG preinstal·lat
@@ -394,9 +394,9 @@ COPY BigBuckBunny_9s_vp8.webm /app/
 CMD ["ffmpeg"]
 ```
 
-# 4.2. Construcció de la Imatge Docker:
+### 4.2. Construcció de la Imatge Docker:
 
 
-# 4.3. Eecució del Contenidor:
+### 4.3. Eecució del Contenidor:
 
-# 4.4. Sortida:
+### 4.4. Sortida:
