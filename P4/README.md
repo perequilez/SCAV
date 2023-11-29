@@ -416,7 +416,7 @@ Per tal de construïr la imatge executem la següent comanda:
 docker build -t container_image .
 ```
 
-<img src='Construcció imatge.png' width='500'>
+<img src='Construccio_imatge.png' width='500'>
 
 ### 4.3. Eecució del Contenidor:
 Per tal d'executar el contenidor i que es realitzi la comparació dels videos utilitzem la seüent comanda:
@@ -433,7 +433,7 @@ Per tal d'executar el contenidor i que es realitzi la comparació dels videos ut
 
 docker run -it --rm -v $(pwd):/app container_image -i BigBuckBunny_9s.mp4 -i BigBuckBunny_9s_vp8.webm -filter_complex hstack=inputs=2 /app/container_output.mp4
 ```
-<img src='Execució contenidor Docker.png' width='500'>
+<img src='Execucio_contenidor_Docker.png' width='500'>
 
 ### 4.4. Sortida:
 Podeu trobar el víde de sortida en el mateix repositori P4/output_EX2_compared.mp4.
