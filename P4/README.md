@@ -385,6 +385,11 @@ if __name__ == '__main__':
 
 #### Resultat exercici 3:
 
+En aquest cas, quan executem l'ecercici s'ens obra una pestanya la qual ens permet realitzar totes les conversions vistes en l'exercici anterior però a través d'una interfície gràfica. Els resultats que es poden obtenir són els mateixos que en l'exercici anterior. Si executem l'exercici s'ens obra una interficie amb dues pestanyes:
+
+<img src='GUI_1.png' width='300'> <img src='GUI_2.png' width='300'>
+
+Interectuant amb l'interficie i indicant els fitxers i paths amb els que volem realitzar, podrem relaitzar les conversions i comparacions obtenint els resultast desitjats i guardant-los al path indicat.
 
 ## Exercici 4: Docker
 
