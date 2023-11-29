@@ -85,6 +85,13 @@ class VideoConverter:
             print(f"Error durant la conversió a AV1: {e}")
 
 ```
+#### Resultat exercici 1:
+Podeu trobar els resultats de l'exercici en el mateix repositori P4/:
+- output_video_EX1_360x240_.mp4
+- output_video_EX1_av1.mkv
+- output_video_EX1_h265.mp4
+- output_video_EX1_vp8.webm
+- output_video_EX1_vp9.webm
 
 ## Exercici 2: Comparar Vídeos
 
@@ -97,6 +104,8 @@ def export_video_comparison(vid_1, vid_2, output_file):
     command = f"ffmpeg -i {vid_1} -i {vid_2} -filter_complex hstack=inputs=2 {output_file}_compared.mp4"
     subprocess.call(command, shell=True)
 ```
+#### Resultat exercici 2:
+Podeu trobar els resultats de l'exercici en el mateix repositori P4/output_EX2_compared.mp4.
 
 ## Exercici 3: Interfície Gràfica d'Usuari (GUI)
 
@@ -369,6 +378,9 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
+#### Resultat exercici 3:
+
+
 ## Exercici 4: Docker
 
 ## Descripció
@@ -419,7 +431,6 @@ docker run -it --rm -v $(pwd):/app container_image -i BigBuckBunny_9s.mp4 -i Big
 ```
 
 ### 4.4. Sortida:
-
 El video de sortida és el següent:
 
 
