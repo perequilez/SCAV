@@ -465,7 +465,7 @@ Per a executar l'script i provar els diversos exercicis, utilitzem la funció `m
 ```python
 def main():
     # Creem un analitzador d'arguments de línia de comandes
-    parser = argparse.ArgumentParser(description='Executa un exercici específic')  # Creem un objecte d'analitzador d'arguments amb una descripció
+    parser = argparse.ArgumentParser(description='Executa un exercici')  # Creem un objecte d'analitzador d'arguments amb una descripció
     parser.add_argument('exercici', type=int, help='Número de l\'exercici (1-8)')  # Afegim un argument que espera un número d'exercici
     args = parser.parse_args()  # Analitzem els arguments de la línia de comandes
 
@@ -496,7 +496,7 @@ def main():
     elif args.exercici == 8:  # Si l'argument 'exercici' és igual a 8
         pass
     else:  # Si l'argument 'exercici' no coincideix amb cap dels valors anteriors
-        print("Número d'exercici no vàlid. Si us plau, trieu un exercici entre 1 i 8")  # Mostrem un missatge d'error
+        print("Número d'exercici no vàlid. Si us plau, trieu un número entre 1 i 8")  # Mostrem un missatge d'error
 
 
 if __name__ == "__main__":
