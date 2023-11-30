@@ -508,4 +508,4 @@ Per tal d'executar un exercici:
 Exemple: python3 VideoConverter.py 1
 Això executarà l'exercici 1 amb els valors indicats en el main() i proporcionarà els resultats.
 
-Canviant el número "1" de la comanda podràs executar els diferents exercicis, introduïnt un número (1-8). Cal tenir en compte que en aquesta pràctica el número de la comanda no coincideix amb l'exercici que s'executrà ja que hi ha un número per executar cada funció de l'exercici 1 (1-5), per l'exercici 2 (6) i per lexercici 3 (7).
+Canviant el número "1" de la comanda podràs executar els diferents exercicis, introduïnt un número (1-8). Cal tenir en compte que en aquesta pràctica el número de la comanda no coincideix amb l'exercici que s'executrà. Hi ha un número per executar cada funció de l'exercici 1 (1-5), per l'exercici 2 (6) i per lexercici 3 (7).
