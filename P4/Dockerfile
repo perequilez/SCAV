@@ -1,4 +1,4 @@
-# Usa una imatge base amb FFMPEG preinstal·lat
+# Usa una imatge base amb FFMPEG
 FROM jrottenberg/ffmpeg:4.2-ubuntu
 
 # Estableix el directori de treball
