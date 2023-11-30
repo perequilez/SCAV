@@ -85,7 +85,7 @@ class VideoConverter:
             print(f"Error durant la conversió a AV1: {e}")
 
 ```
-#### Resultat exercici 1:
+#### Resultats exercici 1:
 Podeu trobar els resultats de l'exercici en el mateix repositori P4/:
 - output_video_EX1_360x240_.mp4
 - output_video_EX1_av1.mkv
