@@ -434,8 +434,8 @@ docker build -t container_image .
 
 <img src='Construccio_imatge.png' width='1000'>
 
-### 4.3. Eecució del Contenidor:
-Per tal d'executar el contenidor i que es realitzi la comparació dels videos utilitzem la seüent comanda:
+### 4.3. Execució del Contenidor:
+Per tal d'executar el contenidor i que es realitzi la comparació dels videos utilitzem la següent comanda:
 
 ```python
 # Executem un contenidor amb les següents opcions:
@@ -452,7 +452,7 @@ docker run -it --rm -v $(pwd):/app container_image -i BigBuckBunny_9s.mp4 -i Big
 <img src='Execucio_contenidor_Docker.png' width='1000'>
 
 ### 4.4. Sortida:
-Podeu trobar el víde de sortida en el mateix repositori P4/output_EX2_compared.mp4.
+Podeu trobar el vídeo de sortida en el mateix repositori P4/output_EX2_compared.mp4.
 
 <img src='Output_EX4.png' width='1000'>
 
