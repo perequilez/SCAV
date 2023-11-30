@@ -397,13 +397,13 @@ En aquest cas, quan executem l'ecercici s'ens obra una pestanya la qual ens perm
 
 <img src='GUI_1.png' width='300'> <img src='GUI_2.png' width='300'>
 
-Interectuant amb l'interficie i indicant els fitxers i paths amb els que volem realitzar, podrem relaitzar les conversions i comparacions obtenint els resultast desitjats i guardant-los al path indicat.
+Interectuant amb l'interficie i indicant els fitxers i paths amb els que volem treballar, podrem relaitzar les conversions i comparacions entre aqesuts, obtenint els resultast desitjats i guardant-los al path indicat.
 
 ## Exercici 4: Docker
 
 ## Descripció
 
-Docker és una plataforma que facilita el desenvolupament, la distribució i l'execució d'aplicacions mitjançant contenidors. Aquests contenidors són unitats lleugeres i portàtils que encapsulen software i les seves dependencies. En aquest exercici, l'objectiu és construir un contenidor Docker que contingui FFMPEG, una eina de processament de vídeo, oferint una manera creativa d'utilitzar aquest contenidor per processar alguna cosa. Amb Docker, es pot assegurar la consistència de l'aplicació en diversos entorns, millorar la portabilitat i simplificar la gestió del desplegament de software.
+Docker és una plataforma que facilita el desenvolupament, distribució i l'execució d'aplicacions mitjançant contenidors. Aquests contenidors són unitats lleugeres i portàtils que encapsulen software i les seves dependencies. En aquest exercici, l'objectiu és construir un contenidor Docker que contingui FFMPEG, una eina de processament de vídeo, oferint una manera creativa d'utilitzar aquest contenidor per processar alguna cosa. Amb Docker, es pot assegurar la consistència de l'aplicació en diversos entorns, millorar la portabilitat i simplificar la gestió del desplegament de software.
 
 En aquest cas, utilitzarem el Docker per a realitzar la comparació entre dos vídeos. Per a fer-ho hem de seguir diferents passos:
 
