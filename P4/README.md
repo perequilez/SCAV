@@ -410,7 +410,7 @@ En aquest cas, utilitzarem el Docker per a realitzar la comparació entre dos v�
 ### 4.1. Creació del fitxer Dockerfile:
 
 ```python
-# Utilitzem una imatge base amb FFMPEG preinstal·lat
+# Utilitzem una imatge base amb FFMPEG
 FROM jrottenberg/ffmpeg:4.2-ubuntu
 
 # Establim el directori de treball
