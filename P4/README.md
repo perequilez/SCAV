@@ -47,7 +47,7 @@ class VideoConverter:
     @staticmethod
     def convert_to_vp8(input_file, output_file):
         try:
-            # Utilitzem 'ffmpeg' per convertir a VP8
+            # Utilitzem 'ffmpeg' per convertir el vídeo a VP8
             command = f"ffmpeg -i {input_file} -c:v libvpx -b:v 1M -c:a libvorbis {output_file}_vp8.webm"
             subprocess.call(command, shell=True)
         except Exception as e:
@@ -57,7 +57,7 @@ class VideoConverter:
     @staticmethod
     def convert_to_vp9(input_file, output_file):
         try:
-            # Utilitzem 'ffmpeg' per convertir a VP9
+            # Utilitzem 'ffmpeg' per convertir el vídeo a VP9
             command = f"ffmpeg -i {input_file} -c:v libvpx-vp9 -b:v 1M -c:a libvorbis {output_file}_vp9.webm"
             subprocess.call(command, shell=True)
         except Exception as e:
@@ -67,7 +67,7 @@ class VideoConverter:
     @staticmethod
     def convert_to_h265(input_file, output_file):
         try:
-            # Utilitzem 'ffmpeg' per convertir a H.265
+            # Utilitzem 'ffmpeg' per convertir el vídeo a H.265
             command = f"ffmpeg -i {input_file} -c:a copy -c:v libx265 {output_file}_h265.mp4"
             subprocess.call(command, shell=True)
         except Exception as e:
@@ -77,7 +77,7 @@ class VideoConverter:
     @staticmethod
     def convert_to_av1(input_file, output_file):
         try:
-            # Utilitzem 'ffmpeg' per convertir a AV1
+            # Utilitzem 'ffmpeg' per convertir el vídeo a AV1
             command = f"ffmpeg -i {input_file} -c:v libaom-av1 -crf 30 {output_file}_av1.mkv"
             subprocess.call(command, shell=True)
         except Exception as e:
